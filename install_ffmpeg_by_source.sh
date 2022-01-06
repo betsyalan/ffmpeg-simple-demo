@@ -25,7 +25,7 @@ cd nasm-2.15.05
 ./configure --prefix="$SRC" --bindir="$SRC_BIN"
 make
 make install
-rm -rf nasm-2.15.05
+#rm -rf nasm-2.15.05
 
 ########################################################
 ## yasm
@@ -38,7 +38,7 @@ cd yasm-1.3.0
 ./configure --prefix="$SRC" --bindir="$SRC_BIN"
 make
 make install
-rm -rf yasm-1.3.0
+#rm -rf yasm-1.3.0
 
 
 ########################################################
@@ -46,38 +46,38 @@ rm -rf yasm-1.3.0
 ########################################################
 cd ~/ffmpeg_sources
 git clone --branch stable --depth 1 https://code.videolan.org/videolan/x264.git
-rm -rf x264
-tar xzvf x264.tar.gz
+#rm -rf x264
+#tar xzvf x264.tar.gz
 cd x264
 ./configure --prefix="$SRC" --bindir="$SRC_BIN" --enable-pic --enable-shared --disable-cli
 make
 make install
-rm -rf x264
+#rm -rf x264
 
 ########################################################
 ## x265
 ########################################################
 cd ~/ffmpeg_sources
 git clone --branch stable --depth 2 https://bitbucket.org/multicoreware/x265_git
-rm -rf x265_git
-tar xzvf x265_git.tar.gz
+#rm -rf x265_git
+#tar xzvf x265_git.tar.gz
 cd x265_git/build/linux
 cmake -G "Unix Makefiles" -DCMAKE_INSTALL_PREFIX="$SRC" -DENABLE_SHARED:bool=on ../../source
 make
 make install
-rm -rf x265_git
+#rm -rf x265_git
 
 
 cd ~/ffmpeg_sources
 git clone --depth 1 https://github.com/mstorsjo/fdk-aac
-rm -rf fdk-aac
-tar xzvf fdk-aac.tar.gz
+#rm -rf fdk-aac
+#tar xzvf fdk-aac.tar.gz
 cd fdk-aac
 autoreconf -fiv
 ./configure --prefix="$SRC"
 make
 make install
-rm -rf fdk-aac
+#rm -rf fdk-aac
 
 
 cd ~/ffmpeg_sources
@@ -88,7 +88,7 @@ cd lame-3.100
 ./configure --prefix="$SRC" --bindir="$SRC_BIN" --enable-nasm
 make
 make install
-rm -rf lame-3.100
+#rm -rf lame-3.100
 
 cd ~/ffmpeg_sources
 curl -O -L https://archive.mozilla.org/pub/opus/opus-1.3.1.tar.gz
@@ -98,17 +98,17 @@ cd opus-1.3.1
 ./configure --prefix="$SRC"
 make
 make install
-rm -rf opus-1.3.1
+#rm -rf opus-1.3.1
 
 cd ~/ffmpeg_sources
 git clone --depth 1 https://chromium.googlesource.com/webm/libvpx.git
-rm -rf libvpx
-tar xzvf libvpx.tar.gz
+#rm -rf libvpx
+#tar xzvf libvpx.tar.gz
 cd libvpx
 ./configure --prefix="$SRC" --disable-examples --disable-unit-tests --enable-vp9-highbitdepth --as=yasm
 make
 make install
-rm -rf libvpx
+#rm -rf libvpx
 
 cd ~/ffmpeg_sources
 curl -O -L https://ffmpeg.org/releases/ffmpeg-snapshot.tar.bz2
@@ -134,6 +134,6 @@ cd ffmpeg-4.4
 make
 make install
 hash -d ffmpeg
-rm -rf ffmpeg-4.4
+#rm -rf ffmpeg-4.4
 
 ldconfig # update ld.so.cache
